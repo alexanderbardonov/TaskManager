@@ -1,0 +1,32 @@
+<div class="modal-header" style="background: darkgrey">
+    <div class="text_title">
+        LogIn
+    </div>
+</div>
+
+<div class="modal-body" style="text-align: center;background:#eeeeee">
+    <form name="$parent.logInForm" ng-submit="LogIn()" novalidate>
+
+        <label for="email">Login(e-mail): </label>
+        <input class="input-lg" type="email" id="email" name="email" ng-model="$parent.loginEmail" placeholder="Email address"
+               ng-class="{'has-error': logInForm.email.$invalid && submitLogIn}"
+               required/><br/>
+
+        <label for="password">Password: </label>
+        <input class="input-lg" type="password" id="password" name="password" ng-model="$parent.loginPassword"
+               ng-class="{'has-error': logInForm.password.$invalid && submitLogIn}"
+               placeholder="Password" required/><br/>
+
+        <div class="error" ng-show="!logInForm.$valid && submitLogIn">
+            <br/>
+            {{errorMessage}}
+        </div>
+
+        <br/>
+
+    </form>
+</div>
+
+<div class="modal-footer" style="background: darkgrey; margin-top: 0">
+    <button class="btn btn-lg" ng-click="LogIn()" type="submit">Ok</button>
+</div>

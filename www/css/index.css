@@ -1,0 +1,66 @@
+.view_container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    background: darkgrey;
+}
+
+.header_wrapper {
+    position: relative;
+    width: 80%;
+    margin: auto;
+}
+
+.header_title {
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+}
+
+.header_content {
+    position: absolute;
+    right: 0px;
+    top: 5px;
+}
+
+.text_title {
+    color: #ffffff;
+    font-size: 30px;
+    text-shadow: #000000 0px 0px 5px;
+
+}
+
+input {
+    width: 60%;
+}
+
+label {
+    font-size: 20px;
+    margin-top: 20px;
+    width: 250px;
+}
+
+body {
+    font-size: 20px;
+    color: #404142;
+    font-family: verdana, sans-serif;
+}
+
+.container_wrap {;
+    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, .7);
+    -webkit-box-shadow: 0 10px 10px -10px rgba(0, 0, 0, .7);
+    border-radius: 20px;
+}
+
+input.has-error, input.ng-invalid-match, input.ng-invalid-minlength, input.ng-invalid-maxlength {
+    border: 2px solid #A83D38;
+}
+.error{
+    color: #A83D38;
+}

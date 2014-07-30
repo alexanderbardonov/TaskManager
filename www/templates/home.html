@@ -1,0 +1,38 @@
+<div style="text-align: center">
+    <form name="signUpForm" ng-submit="signUp()" novalidate>
+
+        <label for="email">Login(e-mail): </label>
+        <input class="input-lg" type="email" id="email" name="email" ng-model="user.email" placeholder="Email address"
+               ng-class="{'has-error': signUpForm.email.$invalid && submitSignUp}"
+               required/><br/>
+
+        <label for="password">Password: </label>
+        <input class="input-lg" type="password" id="password" name="password" ng-model="user.pass"
+               ng-class="{'has-error': signUpForm.password.$invalid && submitSignUp}"
+               placeholder="Password" required/><br/>
+
+        <label for="repeatPassword">Repeat password: </label>
+        <input class="input-lg" type="password" id="repeatPassword" name="repeatPassword" ng-model="user.confPass"
+               ng-class="{'has-error': signUpForm.repeatPassword.$invalid && submitSignUp}"
+               placeholder="Confirm Password" required/> <br/>
+
+        <label for="firstName">First Name: </label>
+        <input class="input-lg" type="text" id="firstName" name="firstName" ng-model="user.firstName"
+               ng-class="{'has-error': signUpForm.firstName.$invalid && submitSignUp}"
+               placeholder="First Name" required/><br/>
+
+        <label for="secondName">Second Name: </label>
+        <input class="input-lg" type="text" id="secondName" name="secondName" ng-model="user.secondName"
+               ng-class="{'has-error': signUpForm.secondName.$invalid && submitSignUp}"
+               placeholder="Second Name" required/><br/>
+
+        <div class="error" ng-show="!signUpForm.$valid && submitSignUp">
+            <br/>
+            {{errorMessage}}
+        </div>
+
+        <button style="background: darkgrey;margin-top: 30px" class="btn-lg text_title" type="submit">Sign Up</button>
+
+    </form>
+</div>
+
