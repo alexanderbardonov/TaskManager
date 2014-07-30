@@ -46,6 +46,7 @@ taskManager.config(function ($stateProvider, $urlRouterProvider){
 });
 
 taskManager.run(function( $state, $location, SessionService){
+//
 //    localStorage.clear();
     if (localStorage.getItem("currentUser")){
         var user = JSON.parse(localStorage['currentUser']);
