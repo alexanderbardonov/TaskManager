@@ -6,5 +6,6 @@ angular.module('taskManager').controller('preView',
         if(!$scope.isAuth()){
             $state.go('main.home');
         }
+
     });
 

@@ -9,14 +9,15 @@
            placeholder="Name of Task"/><br/>
 
     <label for="state">State: </label>
-    <select id="state" class="input-lg" ng-model="task.state">
+    <select id="state" class="input-lg" ng-model="task.state"
+            ng-class="{'in_progress':task.state=='In Progress','pending':task.state=='Pending','completed':task.state=='Completed'}">
         <option selected>In Progress</option>
         <option>Pending</option>
         <option>Completed</option>
     </select>
 
     <label for="description">Description: </label>
-    <textarea style="width: 60%;height: 200px;margin-top: 10px" class="input-lg" id="description"
+    <textarea style="width: 60%;height: 100px;margin-top: 10px" class="input-lg" id="description"
               ng-model="task.description" placeholder="Description your Task"></textarea>
 
 
@@ -26,6 +27,6 @@
     </div>
 
     <br/>
-    <button style="background: darkgrey" class="btn-lg text_title" ng-click="createTask()">Create Task</button>
+    <button style="background: darkgrey;font-size: 20px;padding: 5px" class="btn-lg text_title" ng-click="createTask()">Create Task</button>
 
 </div>
