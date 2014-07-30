@@ -3,5 +3,8 @@
  */
 angular.module('taskManager').controller('mainView',
     function ($scope, $state, $modal, SessionService, modelUser) {
+        $scope.newTask = function(){
+            $state.go('main.newTask');
+        }
     });
 

@@ -3,7 +3,8 @@
  */
 angular.module('taskManager').service('modelUser', function(){
 
-    var user = {}
+    var user = {};
+    var task = {};
 
     this.getUser = function(){
         user = {
@@ -11,9 +12,19 @@ angular.module('taskManager').service('modelUser', function(){
             email: "",
             confPass: "",
             firstName: "",
-            secondName: ""
+            secondName: "",
+            tasks:[]
         };
         return user;
+    };
+
+    this.getTask = function(){
+        task = {
+            name:'',
+            description:'',
+            state:''
+        };
+        return task;
     }
 
 });

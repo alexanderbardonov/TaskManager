@@ -34,4 +34,16 @@ angular.module('taskManager').service('SessionService', function(){
     this.getCurrentUser = function(){
         return currentUser;
     }
+
+    this.setCurrentUser = function(user){
+        currentUser = user;
+    }
+
+    this.addTaskUser = function(user,task){
+        if(localStorage[user.email]){
+            user.tasks.push(task);
+            localStorage[user.email] = JSON.stringify(user);
+            this.setCurrentUser(user);
+        }
+    }
 });

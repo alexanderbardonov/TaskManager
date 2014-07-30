@@ -22,11 +22,24 @@ taskManager.config(function ($stateProvider, $urlRouterProvider){
             views:{
                 'preView':{
                     templateUrl:'templates/preView.html',
-                    controller:'mainView'
+                    controller:'preView'
                 },
                 'mainView':{
                     templateUrl:'templates/mainView.html',
-                    controller:'preView'
+                    controller:'mainView'
+                }
+            }
+        })
+        .state('main.newTask',{
+            url:'/new_task',
+            views:{
+                'preView':{
+                    templateUrl:'templates/preView.html',
+                    controller:'mainView'
+                },
+                'createTask':{
+                    templateUrl:'templates/newTask.html',
+                    controller:'newTask'
                 }
             }
         })

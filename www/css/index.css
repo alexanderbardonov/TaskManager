@@ -36,8 +36,9 @@
 
 }
 
-input {
+input,select{
     width: 60%;
+    height: 50px!important;
 }
 
 label {

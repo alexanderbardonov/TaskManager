@@ -1,4 +1,8 @@
-<div class="container">
-    <div style="width: 100%;height: 100px;background: #000000">
-    </div>
+
+<div ng-repeat="task in user.tasks">
+    {{task.name}}
+</div>
+
+<div style="text-align: center">
+    <button style="background: darkgrey" class="btn-lg text_title" ng-click="newTask()">New Task</button>
 </div>

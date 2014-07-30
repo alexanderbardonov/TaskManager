@@ -1,0 +1,31 @@
+<div style="text-align: center">
+    <div style="padding: 10px;border-radius: 10px;background: #cbcbcb">
+        To Create new Task please fill out the form
+    </div>
+
+    <label for="caption">Caption: </label>
+    <input class="input-lg" type="text" ng-model="task.name" id="caption"
+           ng-class="{'has-error': nameEmpty}"
+           placeholder="Name of Task"/><br/>
+
+    <label for="state">State: </label>
+    <select id="state" class="input-lg" ng-model="task.state">
+        <option selected>In Progress</option>
+        <option>Pending</option>
+        <option>Completed</option>
+    </select>
+
+    <label for="description">Description: </label>
+    <textarea style="width: 60%;height: 200px;margin-top: 10px" class="input-lg" id="description"
+              ng-model="task.description" placeholder="Description your Task"></textarea>
+
+
+    <div class="error" ng-show="nameEmpty">
+        <br/>
+        {{errorMessage}}
+    </div>
+
+    <br/>
+    <button style="background: darkgrey" class="btn-lg text_title" ng-click="createTask()">Create Task</button>
+
+</div>
