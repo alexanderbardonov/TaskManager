@@ -22,8 +22,8 @@
         <div style="text-align: center">
 
             <label for="state">State: </label>
-            <select id="state" class="" ng-model="taskState"
-                    ng-class="{'in_progress':taskState=='In Progress','pending':taskState=='Pending','completed':taskState=='Completed'}">
+            <select id="state" class="" ng-model="taskItem.state"
+                    ng-class="{'in_progress':taskItem.state=='In Progress','pending':taskItem.state=='Pending','completed':taskItem.state=='Completed'}">
                 <option>In Progress</option>
                 <option>Pending</option>
                 <option>Completed</option>
