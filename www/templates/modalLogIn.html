@@ -8,12 +8,12 @@
     <form name="$parent.logInForm" ng-submit="LogIn()" novalidate>
 
         <label for="email">Login(e-mail): </label>
-        <input class="input-lg" type="email" id="email" name="email" ng-model="$parent.loginEmail" placeholder="Email address"
+        <input class="" type="email" id="email" name="email" ng-model="$parent.loginEmail" placeholder="Email address"
                ng-class="{'has-error': logInForm.email.$invalid && submitLogIn}"
                required/><br/>
 
         <label for="password">Password: </label>
-        <input class="input-lg" type="password" id="password" name="password" ng-model="$parent.loginPassword"
+        <input class="" type="password" id="password" name="password" ng-model="$parent.loginPassword"
                ng-class="{'has-error': logInForm.password.$invalid && submitLogIn}"
                placeholder="Password" required/><br/>
 

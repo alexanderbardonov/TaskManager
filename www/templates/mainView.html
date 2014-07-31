@@ -1,7 +1,43 @@
-<div style="text-align: center">
-    <button style="background: darkgrey;font-size: 20px;padding: 5px" class="btn-lg text_title" ng-click="newTask()">New Task</button>
-</div>
+<div ng-show="tasksDisplay[0]">
+    <div style="padding: 10px;border-radius: 10px;background: #cbcbcb;text-align: center">
+        {{displayMessage}}
+    </div>
 
-<div ng-repeat="task in user.tasks">
-    {{task.name}}
+    <div style="position: relative;left: 40px;height: 420px;overflow: hidden;width: 230px;margin-top: 20px;border:1px solid grey; padding: 10px;border-radius: 15px">
+        <div style="position: relative;height: 400px;overflow: auto;width: 200px">
+            <div ng-repeat="task in tasksDisplay track by $index" >
+                <div class="item_task"
+                     ng-class="{'in_progress':task.state=='In Progress','pending':task.state=='Pending','completed':task.state=='Completed'}"
+                     ng-click="choseTask(task)">
+                    {{task.name}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="position: absolute;left: 300px;top:180px;right:20px;height: 320px;overflow: hidden;margin-top: 20px;border:1px solid grey; padding: 10px;border-radius: 15px">
+        <div style="text-align: center;font-size: 30px;width: 100%">
+            {{taskItem.name}}
+        </div>
+
+        <div style="text-align: center">
+
+            <label for="state">State: </label>
+            <select id="state" class="" ng-model="taskState"
+                    ng-class="{'in_progress':taskState=='In Progress','pending':taskState=='Pending','completed':taskState=='Completed'}">
+                <option>In Progress</option>
+                <option>Pending</option>
+                <option>Completed</option>
+            </select><br/>
+
+            <label for="description">Description: </label>
+            <textarea style="width: 60%;height: 100px;margin-top: 10px" class="" id="description"
+                      ng-model="taskItem.description" placeholder="Description your Task"></textarea>
+
+            <br/><br/>
+            <button class="btn-lg text_title btn_function" ng-click="createTask()" disabled>Update Task</button>
+            <button class="btn-lg text_title btn_function" ng-click="createTask()">Delete Task</button>
+
+        </div>
+
+    </div>
 </div>

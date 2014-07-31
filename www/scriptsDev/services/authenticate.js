@@ -36,6 +36,7 @@ angular.module('taskManager').service('SessionService', function(){
     }
 
     this.setCurrentUser = function(user){
+        localStorage['currentUser'] = JSON.stringify(user);
         currentUser = user;
     }
 

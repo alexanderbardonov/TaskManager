@@ -18,4 +18,7 @@ angular.module('taskManager').controller('newTask',
                 $scope.authHome();
             }
         }
+        $scope.cancel = function(){
+            $state.go('main.authHome');
+        }
     });

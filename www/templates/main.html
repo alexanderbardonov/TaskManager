@@ -8,14 +8,14 @@
             <button class="btn btn-lg" ng-click="logIn()">LogIn</button>
         </div>
 
-        <div style="position:absolute;right:120px;top:20px" ng-show="isAuth()">Hello {{user.firstName}} {{user.secondName}}!</div>
+        <div style="position:absolute;right:120px;top:30px" ng-show="isAuth()">Hello {{user.firstName}} {{user.secondName}}!</div>
 
         <div class="header_content" ng-show="isAuth()">
             <button class="btn btn-lg" ng-click="logOut()">LogOut</button>
         </div>
     </div>
 </div>
-<div class="container container_wrap" style="margin-top: 60px; background:#eeeeee" >
+<div class="container container_wrap" style="margin-top: 80px;margin-bottom: 20px; background:#eeeeee;position: relative" >
     <div ui-view></div>
     <div class="view_container" ui-view="preView"></div>
     <div class="view_container" ui-view="mainView"></div>

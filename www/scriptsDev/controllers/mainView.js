@@ -3,8 +3,11 @@
  */
 angular.module('taskManager').controller('mainView',
     function ($scope, $state, $modal, SessionService, modelUser) {
-        $scope.newTask = function(){
-            $state.go('main.newTask');
+
+        $scope.choseTask = function(item){
+            $scope.taskItem = item;
+            $scope.taskState = $scope.taskItem.state;
         }
+
     });
 
