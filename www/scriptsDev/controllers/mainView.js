@@ -3,11 +3,15 @@
  */
 angular.module('taskManager').controller('mainView',
     function ($scope, $state, $modal, SessionService, modelUser) {
-//        $scope.taskState = modelUser.getTask();
-//        $scope.taskState.state = $scope.tasksDisplay[0].state;
 
-        $scope.choseTask = function(item){
-            $scope.taskItem = item;
+        $scope.choseTask = function (item) {
+            $scope.setTaskItem(item);
+        };
+
+        $scope.upDateTask = function (item) {
+
+            SessionService.update($scope.user, item);
+            $scope.numTasks();
         }
 
     });

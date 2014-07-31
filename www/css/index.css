@@ -193,5 +193,5 @@ input.has-error, input.ng-invalid-match, input.ng-invalid-minlength, input.ng-in
     background: rgba(141, 148, 108, 0.30);
 }
 .item_task:active{
-    border: 2px solid gray;
+    border: 2px solid #000000;
 }

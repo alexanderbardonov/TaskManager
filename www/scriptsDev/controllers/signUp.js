@@ -32,6 +32,6 @@ angular.module('taskManager').controller('signUp',
         };
 
         if($scope.isAuth()){
-            $state.go('main.authHome');
+            $scope.authHome();
         }
     });

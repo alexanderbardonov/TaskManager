@@ -33,12 +33,22 @@ angular.module('taskManager').service('SessionService', function(){
 
     this.getCurrentUser = function(){
         return currentUser;
-    }
+    };
 
     this.setCurrentUser = function(user){
         localStorage['currentUser'] = JSON.stringify(user);
         currentUser = user;
-    }
+    };
+
+    this.findeElement = function(array,target){
+        var elm = JSON.stringify(target);
+        for (var i = 0; i<array.length ;i++){
+            if(JSON.stringify(array[i]) == elm){
+                return i;
+            }
+        }
+        return -1;
+    };
 
     this.addTaskUser = function(user,task){
         if(localStorage[user.email]){
@@ -46,5 +56,11 @@ angular.module('taskManager').service('SessionService', function(){
             localStorage[user.email] = JSON.stringify(user);
             this.setCurrentUser(user);
         }
+    }
+    this.update = function(user,task){
+        user.tasks[task.ind].state = task.state;
+        user.tasks[task.ind].description = task.description;
+        localStorage[user.email] = JSON.stringify(user);
+        this.setCurrentUser(user);
     }
 });

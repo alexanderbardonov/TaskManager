@@ -1,11 +1,12 @@
+<div style="padding: 10px;border-radius: 10px;background: #cbcbcb;text-align: center">
+    {{displayMessage}}
+</div>
+
 <div ng-show="tasksDisplay[0]">
-    <div style="padding: 10px;border-radius: 10px;background: #cbcbcb;text-align: center">
-        {{displayMessage}}
-    </div>
 
     <div style="position: relative;left: 40px;height: 420px;overflow: hidden;width: 230px;margin-top: 20px;border:1px solid grey; padding: 10px;border-radius: 15px">
         <div style="position: relative;height: 400px;overflow: auto;width: 200px">
-            <div ng-repeat="task in tasksDisplay track by $index" >
+            <div ng-repeat="task in tasksDisplay track by $index">
                 <div class="item_task"
                      ng-class="{'in_progress':task.state=='In Progress','pending':task.state=='Pending','completed':task.state=='Completed'}"
                      ng-click="choseTask(task)">
@@ -34,8 +35,8 @@
                       ng-model="taskItem.description" placeholder="Description your Task"></textarea>
 
             <br/><br/>
-            <button class="btn-lg text_title btn_function" ng-click="createTask()" disabled>Update Task</button>
-            <button class="btn-lg text_title btn_function" ng-click="createTask()">Delete Task</button>
+            <button class="btn-lg text_title btn_function" ng-click="upDateTask(taskItem)">Save Change</button>
+            <button class="btn-lg text_title btn_function" ng-click="deleteTask()">Delete Task</button>
 
         </div>
 

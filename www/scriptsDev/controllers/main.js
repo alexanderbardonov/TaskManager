@@ -5,9 +5,19 @@ angular.module('taskManager').controller('mainCtrl',
     function ($scope, $state, $modal, SessionService, modelUser) {
 
         $scope.user = modelUser.getUser();
-        $scope.displayMessage = 'All Tasks displaying';
+        $scope.displayMessage = 'All '+$scope.user.tasks.length+' Tasks displaying';
         $scope.tasksDisplay = [];
         $scope.taskItem = modelUser.getTask();
+        $scope.touchTask = 0;
+
+        $scope.setTaskItem = function(item){
+            $scope.taskItem = jQuery.extend(true, {}, item);
+            $scope.taskItem.ind = SessionService.findeElement($scope.user.tasks,item);
+        };
+
+        $scope.setMessage = function(message){
+          $scope.displayMessage = message;
+        };
 
         $scope.setDisplayMessage = function (message) {
             $scope.displayMessage = message;
@@ -39,12 +49,12 @@ angular.module('taskManager').controller('mainCtrl',
         $scope.authHome = function () {
             $scope.user = SessionService.getCurrentUser();
             $scope.setTasksDisplay($scope.user.tasks);
+            $scope.displayMessage = 'All '+$scope.user.tasks.length+' Tasks displaying';
             $state.go('main.authHome');
         };
         $scope.setTasksDisplay = function (tasks) {
             $scope.tasksDisplay = tasks;
-            $scope.taskItem = $scope.tasksDisplay[0];
-            $scope.taskState = $scope.taskItem.state;
+            $scope.setTaskItem($scope.tasksDisplay[0]);
         };
 
         if ($scope.isAuth()) {
