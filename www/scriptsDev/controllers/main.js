@@ -49,6 +49,8 @@ angular.module('taskManager').controller('mainCtrl',
         $scope.logOut = function () {
             SessionService.setUserAuthenticated(false);
             $scope.user = modelUser.getUser();
+            $scope.tasksDisplay = [];
+            $scope.displayMessage = 'All 0 Tasks displaying';
             $scope.home();
         };
 
@@ -105,4 +107,8 @@ angular.module('taskManager').controller('mainCtrl',
                 }
             })
         }
+
+        $scope.newTask = function () {
+            $state.go('main.newTask');
+        };
     });

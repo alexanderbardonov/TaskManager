@@ -1,6 +1,6 @@
 <div class="container_wrap"
-     style="position:relative;margin:auto;width: 70%;min-width:500px;height: 100px;background: #dadada">
-    <div class="calcTask" style="position: absolute;top:10px;bottom: 10px;left: 10px;width: 220px" calculatetasks >
+     style="position:relative;margin:auto;width: 70%;min-width:500px;height: 120px;background: #dadada">
+    <div class="calcTask" style="position: absolute;top:10px;left: 10px;width: 220px" calculatetasks>
 
         <div class="prev_progress" ng-click="taskDisplay(1)">
 
@@ -38,17 +38,24 @@
 
     </div>
 
-    <div style="position: absolute;top:10px;bottom: 10px;left: 240px;right: 20px;text-align: center">
+    <div class="calcTask" style="position: absolute;bottom:5px;left: 10px;width: 220px;text-align: center">
+        <div style="width:190px;margin:auto;cursor: pointer;  background: #eeeeee;font-size: 10px;padding: 3px;border-radius: 5px;border: 1px solid grey;" ng-click="home()">
+            Show All Tasks
+        </div>
+    </div>
+
+    <div style="position: absolute;top:25px;bottom: 10px;left: 240px;right: 20px;text-align: center">
 
         <i class="ileft glyphicon glyphicon-search glyph" ng-click="search()"></i>
-        <input class="" style="width: 100%;padding-left: 40px;padding-right: 35px" type="text" ng-model="task.name" id="caption"
+        <input class="" style="width: 100%;padding-left: 40px;padding-right: 35px" type="text" ng-model="task.name"
+               id="caption"
                placeholder="Name of Task to Search"/>
         <i class="iright glyphicon glyphicon-remove-circle glyph" ng-click="clear()"></i>
         <br/>
 
         <div style="text-align: center">
-            <button style="padding: 5px; font-size: 15px; margin-top: 5px" class="btn-lg text_title btn_function"
-                    ng-click="newTask()">New Task
+            <button style="padding: 5px 20px;font-size: 15px; margin-top: 5px" class="btn-lg text_title btn_function"
+                    ng-click="search()">Search
             </button>
         </div>
 

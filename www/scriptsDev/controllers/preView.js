@@ -10,10 +10,6 @@ angular.module('taskManager').controller('preView',
             $state.go('main.home');
         }
 
-        $scope.newTask = function () {
-            $state.go('main.newTask');
-        };
-
         $scope.numTasks();
 
         $scope.groupTasks = function (task) {
@@ -60,9 +56,11 @@ angular.module('taskManager').controller('preView',
                 });
                 $scope.setTasksDisplay(tasks);
                 $state.go('main.authHome');
+            }else{
+                $scope.home();
             }
 
-        }
+        };
         $scope.clear = function () {
             $scope.task.name = '';
             $scope.authHome();

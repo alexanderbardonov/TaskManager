@@ -17,12 +17,13 @@
                ng-class="{'has-error': logInForm.password.$invalid && submitLogIn}"
                placeholder="Password" required/><br/>
 
+        <div style="margin-top: 20px">You can use test User with email:"user@test.com" and password:"test"</div>
+
         <div class="error" ng-show="!logInForm.$valid && submitLogIn">
             <br/>
             {{errorMessage}}
         </div>
 
-        <br/>
 
     </form>
 </div>

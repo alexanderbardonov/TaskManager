@@ -8,7 +8,12 @@ module.exports = function (grunt) {
                 src: [
                     'www/scriptsDev/lib/angular.min.js',
                     'www/scriptsDev/lib/angular-ui-router.min.js',
-                    '<%= ngmin.controllers.dest %>'
+                    'www/scriptsDev/lib/ui-bootstrap-tpls-0.11.0.min.js',
+                    'www/scriptsDev/lib/jquery-1.11.0.min.js',
+                    'www/scriptsDev/test_user.js',
+                    '<%= ngmin.controllers.dest %>',
+                    '<%= ngmin.services.dest %>',
+                    '<%= ngmin.directives.dest %>'
                 ],
                 dest: 'www/scriptsBuild/scripts.js'
             }
@@ -22,11 +27,19 @@ module.exports = function (grunt) {
                     'www/scriptsDev/controllers/*.js'
                 ],
                 dest: 'www/scriptsBuild/controllers.js'
+            },
+            directives: {
+                src: [
+                    'www/scriptsDev/directives/*.js'
+                ],
+                dest: 'www/scriptsBuild/directives.js'
+            },
+            services: {
+                src: [
+                    'www/scriptsDev/services/*.js'
+                ],
+                dest: 'www/scriptsBuild/services.js'
             }
-//            directives: {
-//                src: ['scripts/directives/jqueryUiDirectives.js'],
-//                dest: 'build/directives.js'
-//            }
         },
 
 //        Сжимаем
@@ -44,6 +57,7 @@ module.exports = function (grunt) {
             server: {
                 options: {
                     port: 9000,
+                    protocol: 'http',
                     hostname: 'localhost',
                     keepalive: true,
                     open: true,
