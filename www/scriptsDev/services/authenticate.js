@@ -56,10 +56,15 @@ angular.module('taskManager').service('SessionService', function(){
             localStorage[user.email] = JSON.stringify(user);
             this.setCurrentUser(user);
         }
-    }
+    };
     this.update = function(user,task){
         user.tasks[task.ind].state = task.state;
         user.tasks[task.ind].description = task.description;
+        localStorage[user.email] = JSON.stringify(user);
+        this.setCurrentUser(user);
+    };
+    this.deleteTask = function(user,task){
+        user.tasks.splice(task.ind,1);
         localStorage[user.email] = JSON.stringify(user);
         this.setCurrentUser(user);
     }

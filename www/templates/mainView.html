@@ -6,7 +6,7 @@
 
     <div style="position: relative;left: 40px;height: 420px;overflow: hidden;width: 230px;margin-top: 20px;border:1px solid grey; padding: 10px;border-radius: 15px">
         <div style="position: relative;height: 400px;overflow: auto;width: 200px">
-            <div ng-repeat="task in tasksDisplay track by $index">
+            <div class="item_switch" ng-repeat="task in tasksDisplay track by $index" ng-click="switchTask($index)">
                 <div class="item_task"
                      ng-class="{'in_progress':task.state=='In Progress','pending':task.state=='Pending','completed':task.state=='Completed'}"
                      ng-click="choseTask(task)">
@@ -36,7 +36,7 @@
 
             <br/><br/>
             <button class="btn-lg text_title btn_function" ng-click="upDateTask(taskItem)">Save Change</button>
-            <button class="btn-lg text_title btn_function" ng-click="deleteTask()">Delete Task</button>
+            <button class="btn-lg text_title btn_function" ng-click="deleteTaskItem(taskItem)">Delete Task</button>
 
         </div>
 

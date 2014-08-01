@@ -192,6 +192,3 @@ input.has-error, input.ng-invalid-match, input.ng-invalid-minlength, input.ng-in
 .item_task:hover {
     background: rgba(141, 148, 108, 0.30);
 }
-.item_task:active{
-    border: 2px solid #000000;
-}

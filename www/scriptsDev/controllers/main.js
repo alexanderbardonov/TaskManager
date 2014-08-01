@@ -10,6 +10,16 @@ angular.module('taskManager').controller('mainCtrl',
         $scope.taskItem = modelUser.getTask();
         $scope.touchTask = 0;
 
+        $scope.setTouchTask = function(item){
+            $scope.touchTask = item
+        };
+
+        $scope.switchTask = function(index){
+            $('.item_switch .item_task').eq($scope.touchTask).css('border','1px solid grey');
+            $('.item_switch .item_task').eq(index).css('border','2px solid #000000');
+            $scope.setTouchTask(index);
+        }
+
         $scope.setTaskItem = function(item){
             $scope.taskItem = jQuery.extend(true, {}, item);
             $scope.taskItem.ind = SessionService.findeElement($scope.user.tasks,item);
@@ -55,6 +65,10 @@ angular.module('taskManager').controller('mainCtrl',
         $scope.setTasksDisplay = function (tasks) {
             $scope.tasksDisplay = tasks;
             $scope.setTaskItem($scope.tasksDisplay[0]);
+            $scope.switchTask(0);
+        };
+        $scope.getTasksDisplay = function(){
+            return $scope.tasksDisplay;
         };
 
         if ($scope.isAuth()) {

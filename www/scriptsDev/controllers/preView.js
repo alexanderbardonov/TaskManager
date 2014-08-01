@@ -59,6 +59,7 @@ angular.module('taskManager').controller('preView',
                     }
                 });
                 $scope.setTasksDisplay(tasks);
+                $state.go('main.authHome');
             }
 
         }
